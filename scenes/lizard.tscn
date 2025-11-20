@@ -1,0 +1,148 @@
+[gd_scene load_steps=26 format=3 uid="uid://cpn51wkljhne8"]
+
+[ext_resource type="Script" uid="uid://y5tvkbr5vb0w" path="res://scripts/lizard.gd" id="1_f52iw"]
+[ext_resource type="Texture2D" uid="uid://cr6x6na4roifc" path="res://assets/animations for characters/lizard/Idle1.png" id="2_dj3q8"]
+[ext_resource type="Texture2D" uid="uid://147wb4v32m8y" path="res://assets/animations for characters/lizard/Attack1.png" id="2_h3ti1"]
+[ext_resource type="Texture2D" uid="uid://d3ahswsulwwcl" path="res://assets/animations for characters/lizard/Attack2.png" id="3_4uh4w"]
+[ext_resource type="Texture2D" uid="uid://dy5uwrqrckyre" path="res://assets/animations for characters/lizard/Idle2.png" id="3_l421c"]
+[ext_resource type="Texture2D" uid="uid://mnvwbata2yya" path="res://assets/animations for characters/lizard/Idle3.png" id="4_c4of7"]
+[ext_resource type="Texture2D" uid="uid://c860gdog0f0ry" path="res://assets/animations for characters/lizard/Attack3.png" id="4_p0oop"]
+[ext_resource type="Texture2D" uid="uid://dyw1rd8my4vic" path="res://assets/animations for characters/lizard/Attack4.png" id="5_attwc"]
+[ext_resource type="Texture2D" uid="uid://d3g6vfhqp8co8" path="res://assets/animations for characters/lizard/Attack5.png" id="6_pu0j4"]
+[ext_resource type="Texture2D" uid="uid://b8xtkue6tyu2f" path="res://assets/animations for characters/lizard/Death1.png" id="7_1mi44"]
+[ext_resource type="Texture2D" uid="uid://dtmhnqp6ibuoh" path="res://assets/animations for characters/lizard/Death2.png" id="8_6u2ri"]
+[ext_resource type="Texture2D" uid="uid://dtf3tefwjrin8" path="res://assets/animations for characters/lizard/Death3.png" id="9_bg3bn"]
+[ext_resource type="Texture2D" uid="uid://c0o4b14sia322" path="res://assets/animations for characters/lizard/Death4.png" id="10_d6spx"]
+[ext_resource type="Texture2D" uid="uid://bq0fcak6mmqi" path="res://assets/animations for characters/lizard/Death5.png" id="11_oclqe"]
+[ext_resource type="Texture2D" uid="uid://r802vvo0orrw" path="res://assets/animations for characters/lizard/Death6.png" id="12_pnlcy"]
+[ext_resource type="Texture2D" uid="uid://c3o7efxjdkfma" path="res://assets/animations for characters/lizard/Walk1.png" id="16_ec0mk"]
+[ext_resource type="Texture2D" uid="uid://b5ccwn6civ66u" path="res://assets/animations for characters/lizard/Walk2.png" id="17_5jo8h"]
+[ext_resource type="Texture2D" uid="uid://byobsp6osa4ak" path="res://assets/animations for characters/lizard/Walk3.png" id="18_mswta"]
+[ext_resource type="Texture2D" uid="uid://bxcbeei3v24j7" path="res://assets/animations for characters/lizard/Walk4.png" id="19_e2pvk"]
+[ext_resource type="Texture2D" uid="uid://cl1c3c1vj2do4" path="res://assets/animations for characters/lizard/Walk5.png" id="20_5qf6f"]
+[ext_resource type="Texture2D" uid="uid://b7saeagljhqq7" path="res://assets/animations for characters/lizard/Walk6.png" id="21_t1f8p"]
+[ext_resource type="Script" uid="uid://buhj5dxn4lldt" path="res://scenes/detection_area.gd" id="22_4uh4w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6mbpk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h3ti1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4uh4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p0oop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pu0j4")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1mi44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6u2ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bg3bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d6spx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oclqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pnlcy")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dj3q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l421c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c4of7")
+}],
+"loop": true,
+"name": &"idle lizard",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ec0mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5jo8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mswta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_e2pvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5qf6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_t1f8p")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4uh4w"]
+height = 48.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h3ti1"]
+a = Vector2(33, 0)
+b = Vector2(-22, 0)
+
+[node name="lizard" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_f52iw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -1)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_6mbpk")
+animation = &"attack"
+autoplay = "idle lizard"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 7
+visibility_layer = 3
+position = Vector2(8, 0)
+rotation = 4.71239
+shape = SubResource("CapsuleShape2D_4uh4w")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("22_4uh4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, -1)
+shape = SubResource("SegmentShape2D_h3ti1")
+
+[node name="AttackTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

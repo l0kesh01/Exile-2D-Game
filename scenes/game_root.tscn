@@ -1,0 +1,131 @@
+[gd_scene load_steps=14 format=3 uid="uid://td4xmwvaxlf4"]
+
+[ext_resource type="PackedScene" uid="uid://wg22y008rwsl" path="res://scenes/player.tscn" id="1_78s5d"]
+[ext_resource type="Texture2D" uid="uid://d1wwhgvvur5dl" path="res://assets/environment/Pale/Untitled design (1).png" id="1_iusj4"]
+[ext_resource type="PackedScene" uid="uid://dr21w71ymxw70" path="res://scenes/level_1.tscn" id="1_ni5ms"]
+[ext_resource type="PackedScene" uid="uid://cpn51wkljhne8" path="res://scenes/lizard.tscn" id="4_jb3nc"]
+[ext_resource type="Script" uid="uid://sy0ectyxmfe1" path="res://scenes/background.gd" id="5_a1rh6"]
+[ext_resource type="PackedScene" uid="uid://d11521gu0x2p7" path="res://scenes/spike.tscn" id="5_iusj4"]
+[ext_resource type="PackedScene" uid="uid://cnvtmoqi7e838" path="res://scenes/minotaur.tscn" id="7_j7aru"]
+[ext_resource type="PackedScene" uid="uid://vflk48cwcf4j" path="res://scenes/Fire.tscn" id="8_ylec3"]
+[ext_resource type="PackedScene" uid="uid://dyhh1b52jhgvv" path="res://scenes/moving_platform_root.tscn" id="9_6v30a"]
+[ext_resource type="PackedScene" uid="uid://did77thdvp77w" path="res://scenes/healing_potion.tscn" id="10_1brn0"]
+[ext_resource type="PackedScene" uid="uid://d21rnvxh6qdkw" path="res://scenes/Gate_Proximity.tscn" id="11_melsq"]
+[ext_resource type="PackedScene" uid="uid://d0rn7rgd7y507" path="res://scenes/LockedGate.tscn" id="12_5dyip"]
+[ext_resource type="PackedScene" uid="uid://bu3tpjb061tc6" path="res://scenes/Demon_L1.tscn" id="13_ywsqi"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Level_1" type="Node" parent="."]
+
+[node name="lizards group" type="Node" parent="Level_1"]
+
+[node name="lizard" parent="Level_1/lizards group" instance=ExtResource("4_jb3nc")]
+position = Vector2(1308, 190)
+
+[node name="lizard2" parent="Level_1/lizards group" instance=ExtResource("4_jb3nc")]
+position = Vector2(1003, 678)
+
+[node name="lizard3" parent="Level_1/lizards group" instance=ExtResource("4_jb3nc")]
+position = Vector2(1343, 479)
+
+[node name="lizard4" parent="Level_1/lizards group" instance=ExtResource("4_jb3nc")]
+position = Vector2(1688, 105)
+
+[node name="lizard5" parent="Level_1/lizards group" instance=ExtResource("4_jb3nc")]
+position = Vector2(1697, 664)
+
+[node name="lizard6" parent="Level_1/lizards group" instance=ExtResource("4_jb3nc")]
+position = Vector2(794, 679)
+
+[node name="lizard7" parent="Level_1/lizards group" instance=ExtResource("4_jb3nc")]
+position = Vector2(1075, 682)
+
+[node name="Node2D" parent="Level_1/lizards group" instance=ExtResource("4_jb3nc")]
+position = Vector2(754, 109)
+
+[node name="Background" type="Node2D" parent="Level_1"]
+position = Vector2(141, 64)
+scale = Vector2(1.03798, 1)
+script = ExtResource("5_a1rh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level_1/Background"]
+z_index = -100
+position = Vector2(-3.85361, -1.24999)
+scale = Vector2(0.205727, 0.243981)
+texture = ExtResource("1_iusj4")
+
+[node name="level_1" parent="Level_1" instance=ExtResource("1_ni5ms")]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="Level_1" instance=ExtResource("1_78s5d")]
+position = Vector2(144, 116)
+
+[node name="Camera2D" type="Camera2D" parent="Level_1/Player" groups=["main_camera"]]
+position = Vector2(1, 0)
+scale = Vector2(1, 1.01487)
+zoom = Vector2(3, 3)
+
+[node name="Spikes" type="Node2D" parent="Level_1" groups=["player"]]
+position = Vector2(294, 144)
+
+[node name="Spike1" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(-30, -2)
+
+[node name="Spike2" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+
+[node name="Spike3" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(28, 1)
+
+[node name="Spike4" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(56, 0)
+
+[node name="Spike5" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(85, 2)
+
+[node name="Spike6" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(844, 149)
+
+[node name="Spike" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(1016, 318)
+
+[node name="Spike7" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(808, 92)
+
+[node name="Spike8" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(874, 88)
+
+[node name="Spike10" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(724, 59)
+
+[node name="Spike11" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(1489, 183)
+
+[node name="Spike13" parent="Level_1/Spikes" instance=ExtResource("5_iusj4")]
+position = Vector2(987, 470)
+
+[node name="minotaur2" parent="Level_1" instance=ExtResource("7_j7aru")]
+position = Vector2(671, 4)
+
+[node name="Fire" parent="Level_1" instance=ExtResource("8_ylec3")]
+position = Vector2(507, 111)
+
+[node name="MovingPlatformRoot" parent="Level_1" instance=ExtResource("9_6v30a")]
+position = Vector2(443, 23)
+
+[node name="Gate_Proximity" parent="Level_1" instance=ExtResource("11_melsq")]
+position = Vector2(1205, 357)
+
+[node name="HealingPotion" parent="Level_1" instance=ExtResource("10_1brn0")]
+position = Vector2(199, 101)
+
+[node name="HealingPotion2" parent="Level_1" instance=ExtResource("10_1brn0")]
+position = Vector2(912, 132)
+
+[node name="LockedGate" parent="Level_1" instance=ExtResource("12_5dyip")]
+position = Vector2(887, 100)
+
+[node name="Demon_L1" parent="." instance=ExtResource("13_ywsqi")]
+position = Vector2(132, 62)
+
+[connection signal="boss_defeated" from="Level_1/minotaur2" to="Level_1/LockedGate" method="_on_minotaur_2_boss_defeated"]

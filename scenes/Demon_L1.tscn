@@ -1,0 +1,137 @@
+[gd_scene load_steps=24 format=3 uid="uid://bu3tpjb061tc6"]
+
+[ext_resource type="Texture2D" uid="uid://qqy0t6pmayxx" path="res://assets/animations for characters/demon/Idle1.png" id="1_8jbf2"]
+[ext_resource type="Texture2D" uid="uid://dy8i8jf3w13s0" path="res://assets/animations for characters/demon/Attack1.png" id="1_620ht"]
+[ext_resource type="Texture2D" uid="uid://be8l06b2l3llc" path="res://assets/animations for characters/demon/Idle2.png" id="2_02bbq"]
+[ext_resource type="Texture2D" uid="uid://c6lqasqqq5u4t" path="res://assets/animations for characters/demon/Attack2.png" id="2_uq7cd"]
+[ext_resource type="Texture2D" uid="uid://kmlujgvxf5jx" path="res://assets/animations for characters/demon/Idle3.png" id="3_7q5vx"]
+[ext_resource type="Texture2D" uid="uid://col0mkjnqm6a4" path="res://assets/animations for characters/demon/Attack3.png" id="3_nxi13"]
+[ext_resource type="Texture2D" uid="uid://cw1fpmj41a4o6" path="res://assets/animations for characters/demon/Attack4.png" id="4_dax5e"]
+[ext_resource type="Texture2D" uid="uid://deohv0reo43ut" path="res://assets/animations for characters/demon/Death1.png" id="5_m8oqm"]
+[ext_resource type="Texture2D" uid="uid://ddgw51n61tio6" path="res://assets/animations for characters/demon/Death2.png" id="6_o8dhe"]
+[ext_resource type="Texture2D" uid="uid://pciycvwhmrst" path="res://assets/animations for characters/demon/Death3.png" id="7_fry08"]
+[ext_resource type="Texture2D" uid="uid://pct14wx5nm7c" path="res://assets/animations for characters/demon/Death4.png" id="8_c8bad"]
+[ext_resource type="Texture2D" uid="uid://dwdlyapxpbepd" path="res://assets/animations for characters/demon/Death5.png" id="9_oltjs"]
+[ext_resource type="Texture2D" uid="uid://dm8td6bqtbuds" path="res://assets/animations for characters/demon/Death6.png" id="10_hlqv7"]
+[ext_resource type="Texture2D" uid="uid://xq3xhk4kk5dq" path="res://assets/animations for characters/demon/Hurt1.png" id="11_x4jx3"]
+[ext_resource type="Texture2D" uid="uid://8vlh13lmxyn8" path="res://assets/animations for characters/demon/Hurt2.png" id="12_f7o4d"]
+[ext_resource type="Texture2D" uid="uid://d3myfb228fgfd" path="res://assets/animations for characters/demon/Walk1.png" id="16_gccn7"]
+[ext_resource type="Texture2D" uid="uid://bo21dcmtmjm47" path="res://assets/animations for characters/demon/Walk2.png" id="17_g1kd7"]
+[ext_resource type="Texture2D" uid="uid://cq70e4bdamoe2" path="res://assets/animations for characters/demon/Walk3.png" id="18_prgay"]
+[ext_resource type="Texture2D" uid="uid://byxiyormwuahu" path="res://assets/animations for characters/demon/Walk4.png" id="19_enf53"]
+[ext_resource type="Texture2D" uid="uid://bq14q4pwp4lt0" path="res://assets/animations for characters/demon/Walk5.png" id="20_h4na8"]
+[ext_resource type="Texture2D" uid="uid://iw0j1jr0iada" path="res://assets/animations for characters/demon/Walk6.png" id="21_ciqgx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5brp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_620ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uq7cd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nxi13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dax5e")
+}],
+"loop": true,
+"name": &"DL1-A1",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_m8oqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o8dhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fry08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c8bad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oltjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hlqv7")
+}],
+"loop": true,
+"name": &"DL1-DEATH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_x4jx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_f7o4d")
+}],
+"loop": true,
+"name": &"DL1-HURT",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8jbf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_02bbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7q5vx")
+}],
+"loop": true,
+"name": &"DL1-IDLE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_gccn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_g1kd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_prgay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_enf53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_h4na8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ciqgx")
+}],
+"loop": true,
+"name": &"DL1-WALK",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jl8tw"]
+radius = 23.0
+height = 64.0
+
+[node name="Demon_L1" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 1.04297)
+sprite_frames = SubResource("SpriteFrames_o5brp")
+animation = &"DL1-HURT"
+autoplay = "DL1-IDLE"
+frame_progress = 0.420612
+
+[node name="CharacterBody2D" type="CollisionShape2D" parent="."]
+position = Vector2(-25, 3)
+shape = SubResource("CapsuleShape2D_jl8tw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="Timer" type="Timer" parent="."]

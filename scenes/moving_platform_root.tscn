@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyhh1b52jhgvv"]
+
+[ext_resource type="Script" uid="uid://bkv3nxccd2yxe" path="res://scenes/PathFollow2D.gd" id="1_3jh8v"]
+[ext_resource type="Texture2D" uid="uid://bcj58my1eqsc2" path="res://assets/environment/Starter Tiles Platformer/OutsideHouseTiles/Wall_2_16x16.png" id="2_3jh8v"]
+
+[sub_resource type="Curve2D" id="Curve2D_3jh8v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 108, 10.4444, 0, 0, 0, 0, -88, 8.88889, 0, 0, 0, 0, 108, 8.88889)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjas0"]
+size = Vector2(61, 17.1111)
+
+[node name="MovingPlatformRoot" type="Node2D"]
+
+[node name="PlatformContainer" type="Node2D" parent="."]
+
+[node name="Path2D_Platform" type="Path2D" parent="PlatformContainer"]
+position = Vector2(-9, -7.71428)
+scale = Vector2(1, 0.642857)
+curve = SubResource("Curve2D_3jh8v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PlatformContainer/Path2D_Platform"]
+position = Vector2(108, 10.4444)
+rotates = false
+script = ExtResource("1_3jh8v")
+
+[node name="PlatformBody" type="CharacterBody2D" parent="PlatformContainer/Path2D_Platform/PathFollow2D"]
+position = Vector2(-99, 1.55555)
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformContainer/Path2D_Platform/PathFollow2D/PlatformBody"]
+position = Vector2(-0.499998, -4.76837e-07)
+scale = Vector2(3.8125, 1.16667)
+texture = ExtResource("2_3jh8v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformContainer/Path2D_Platform/PathFollow2D/PlatformBody"]
+position = Vector2(-0.5, -0.777778)
+shape = SubResource("RectangleShape2D_pjas0")
+
+[node name="DebugCollision" type="Area2D" parent="PlatformContainer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformContainer/DebugCollision"]

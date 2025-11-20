@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0rn7rgd7y507"]
+
+[ext_resource type="Script" uid="uid://n74cx7tjgiqw" path="res://scripts/LockedGate.gd" id="1_qgjph"]
+[ext_resource type="Texture2D" uid="uid://d1e4beuhmdfrg" path="res://assets/15.png" id="2_yc8ft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2blgh"]
+size = Vector2(28, 47)
+
+[node name="LockedGate" type="CharacterBody2D"]
+script = ExtResource("1_qgjph")
+
+[node name="GateSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.41, 0.83)
+texture = ExtResource("2_yc8ft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(1, 1.69388)
+shape = SubResource("RectangleShape2D_2blgh")
+
+[node name="OpenArea" type="Area2D" parent="."]
+
+[node name="OpenCollision" type="CollisionShape2D" parent="OpenArea"]

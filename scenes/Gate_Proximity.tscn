@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d21rnvxh6qdkw"]
+
+[ext_resource type="Script" uid="uid://bba58hgvhwpun" path="res://scenes/gate_proximity.gd" id="1_dak5u"]
+[ext_resource type="Texture2D" uid="uid://cnmniesfu5qql" path="res://assets/61.png" id="2_1anme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5dkb"]
+size = Vector2(145, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mbjn"]
+size = Vector2(20, 72)
+
+[node name="Gate_Proximity" type="Node2D"]
+script = ExtResource("1_dak5u")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, 36)
+shape = SubResource("RectangleShape2D_d5dkb")
+
+[node name="MovingPart" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingPart"]
+position = Vector2(-4.76837e-07, 2.38419e-07)
+scale = Vector2(0.179688, 0.84375)
+texture = ExtResource("2_1anme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPart"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_2mbjn")

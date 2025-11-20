@@ -1,0 +1,126 @@
+[gd_scene load_steps=27 format=3 uid="uid://bux84ntk47a18"]
+
+[ext_resource type="Texture2D" uid="uid://bvhsuwsaxi6uj" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame1.png" id="1_wx0rd"]
+[ext_resource type="Texture2D" uid="uid://lk6wjwyewisc" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame3.png" id="2_xdpjc"]
+[ext_resource type="Texture2D" uid="uid://b8ayy6bf4s33r" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame2.png" id="3_keu4p"]
+[ext_resource type="Texture2D" uid="uid://dg2iitjes738c" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame4.png" id="4_nlklu"]
+[ext_resource type="Texture2D" uid="uid://ba76r17jxvnb0" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame5.png" id="5_qj3hn"]
+[ext_resource type="Texture2D" uid="uid://b2c6xc788g5lh" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame6.png" id="6_a7afa"]
+[ext_resource type="Texture2D" uid="uid://cee2rj2wp2bpg" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame7.png" id="7_frrqg"]
+[ext_resource type="Texture2D" uid="uid://buiv3vxfbn15p" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame9.png" id="8_tpa7f"]
+[ext_resource type="Texture2D" uid="uid://by2vsdy7mg2f1" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame8.png" id="9_ldbss"]
+[ext_resource type="Texture2D" uid="uid://dk7kpxlgtw0sm" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame10.png" id="10_c3hxi"]
+[ext_resource type="Texture2D" uid="uid://di677q34xahtm" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame11.png" id="11_k0l0u"]
+[ext_resource type="Texture2D" uid="uid://lg57yplawkfn" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame14.png" id="12_6u4me"]
+[ext_resource type="Texture2D" uid="uid://c7e137h2ebe6j" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame13.png" id="13_6pnvt"]
+[ext_resource type="Texture2D" uid="uid://vkx5yuo7ad75" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame12.png" id="14_1v7j6"]
+[ext_resource type="Texture2D" uid="uid://d07gyky2b33wn" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame15.png" id="15_k7oer"]
+[ext_resource type="Texture2D" uid="uid://bw0m25jt8y2ns" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame17.png" id="16_i7r0h"]
+[ext_resource type="Texture2D" uid="uid://b4tvaupnldqnc" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame16.png" id="17_qtrtb"]
+[ext_resource type="Texture2D" uid="uid://c8sasr0fy4q44" path="res://assets/animations for characters/demon-Files/Sprites/DemonAttack/frame18.png" id="18_llwfc"]
+[ext_resource type="Texture2D" uid="uid://8d5wgxf7lqq3" path="res://assets/animations for characters/demon-Files/Sprites/Idle/idle1.png" id="19_884d8"]
+[ext_resource type="Texture2D" uid="uid://642n7liecbx3" path="res://assets/animations for characters/demon-Files/Sprites/Idle/idle2.png" id="20_ehx1u"]
+[ext_resource type="Texture2D" uid="uid://bhxls0gs6aknh" path="res://assets/animations for characters/demon-Files/Sprites/Idle/idle3.png" id="21_agbw1"]
+[ext_resource type="Texture2D" uid="uid://cxqya1g64ie2e" path="res://assets/animations for characters/demon-Files/Sprites/Idle/idle4.png" id="22_r4leu"]
+[ext_resource type="Texture2D" uid="uid://dk63nxmiuoyyv" path="res://assets/animations for characters/demon-Files/Sprites/Idle/idle5.png" id="23_3lq7h"]
+[ext_resource type="Texture2D" uid="uid://bdrr1i21r43up" path="res://assets/animations for characters/demon-Files/Sprites/Idle/idle6.png" id="24_j17d3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5xfmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wx0rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xdpjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_keu4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nlklu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qj3hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a7afa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_frrqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tpa7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ldbss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c3hxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0l0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6u4me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6pnvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1v7j6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_k7oer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i7r0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qtrtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_llwfc")
+}],
+"loop": true,
+"name": &"DL2-A1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_884d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ehx1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_agbw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_r4leu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_3lq7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_j17d3")
+}],
+"loop": true,
+"name": &"DL2-IDLE",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnjcc"]
+size = Vector2(96.5, 150)
+
+[node name="Demon-L3" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5xfmd")
+animation = &"DL2-A1"
+autoplay = "DL2-IDLE"
+frame_progress = 0.105433
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, 0)
+shape = SubResource("RectangleShape2D_pnjcc")
