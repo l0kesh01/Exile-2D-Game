@@ -15,17 +15,23 @@ var current_health: int
 var player: Node = null
 var start_position: Vector2
 var patrol_direction := 1
-var patrol_timer := 0.0
-const PATROL_TIME := 2.0
 var attack_timer := 0.0
 var is_dead := false
 var direction := Vector2.ZERO
-
 func _ready():
 	current_health = MAX_HEALTH
 	start_position = global_position
-	detection_area.body_entered.connect(_on_detection_area_body_entered)
-	detection_area.body_exited.connect(_on_detection_area_body_exited)
+
+	detection_area.monitoring = true
+	detection_area.monitorable = true
+
+	if not detection_area.body_entered.is_connected(_on_detection_area_body_entered):
+		detection_area.body_entered.connect(_on_detection_area_body_entered)
+	if not detection_area.body_exited.is_connected(_on_detection_area_body_exited):
+		detection_area.body_exited.connect(_on_detection_area_body_exited)
+
+	print("Detection ready. monitoring=", detection_area.monitoring, " mask=", detection_area.collision_mask)
+
 
 func _physics_process(delta):
 	if is_dead:
@@ -46,7 +52,7 @@ func _physics_process(delta):
 			sprite.play("attackMin")
 			attack_timer -= delta
 
-			var is_facing_player = (to_player.x < 0 and sprite.flip_h) or (to_player.x > 0 and not sprite.flip_h)
+			var is_facing_player = sign(to_player.x) == sign(velocity.x) or velocity.x == 0
 
 			if attack_timer <= 0 and is_facing_player:
 				if player.has_method("take_damage"):
@@ -58,15 +64,14 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _patrol(delta):
-	patrol_timer += delta
-	if patrol_timer >= PATROL_TIME:
-		patrol_timer = 0
-		patrol_direction *= -1
-
-	direction = Vector2(patrol_direction, 0)
-	velocity = direction * SPEED
-	sprite.flip_h = direction.x < 0
+	velocity.x = patrol_direction * SPEED
+	sprite.flip_h = patrol_direction < 0
+	_update_detection_position()
 	sprite.play("walk")
+
+	if abs(global_position.x - start_position.x) >= PATROL_DISTANCE:
+		patrol_direction *= -1
+		start_position = global_position
 
 func _update_detection_position():
 	if sprite.flip_h:
@@ -75,7 +80,8 @@ func _update_detection_position():
 		detection_area.position.x = abs(detection_area.position.x)
 
 func _on_detection_area_body_entered(body):
-	if body.is_in_group("player") or body.name == "Player":
+	print("ENTER:", body.name, " groups=", body.get_groups())
+	if body.is_in_group("player"):
 		player = body
 		attack_timer = 0.0
 

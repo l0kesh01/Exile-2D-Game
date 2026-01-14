@@ -1,5 +1,5 @@
 extends Area2D
 
 func _on_body_entered(body):
-	if body.name == "Player":
-		body.die() 
+	if body.is_in_group("player"):
+		body.die()  # call your custom player death function

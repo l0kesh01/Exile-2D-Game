@@ -36,7 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bgke784xojtg3" path="res://assets/axe_origin/run_4.png" id="34_ua5cf"]
 [ext_resource type="Texture2D" uid="uid://5mj21yje58ty" path="res://assets/axe_origin/run_5.png" id="35_51ujp"]
 [ext_resource type="Texture2D" uid="uid://humbuiujeudx" path="res://assets/axe_origin/run_6.png" id="36_tk41t"]
-[ext_resource type="Script" uid="uid://bwg0n4oa41pjy" path="res://scenes/attack_area.gd" id="37_hax0n"]
+[ext_resource type="Script" uid="uid://bwg0n4oa41pjy" path="res://scripts/attack_area.gd" id="37_hax0n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jc3p3"]
 animations = [{
@@ -224,7 +224,7 @@ height = 22.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hax0n"]
 size = Vector2(33, 14)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_tuyoq")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]

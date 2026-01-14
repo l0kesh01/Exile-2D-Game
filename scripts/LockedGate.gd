@@ -30,5 +30,11 @@ func _physics_process(delta):
 			set_physics_process(false)
 
 
-func _on_minotaur_2_boss_defeated() -> void:
-	open_gate()
+
+
+func _on_demon_l_1_boss_defeated() -> void:
+	open_gate()# Replace with function body.
+
+
+func _on_demon_l_2_boss_defeated() -> void:
+	open_gate() # Replace with function body.

@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -350.0
 @onready var sprite_attack: AnimatedSprite2D = $AnimatedSprite2D2 # attack_1 and attack_2
 @onready var attack_area: Area2D = $AttackArea2D
 @onready var attack_shape: CollisionShape2D = $AttackArea2D/CollisionShape2D
-
+signal health_changed(current, max)
 var is_attacking = false
 var is_dead = false
 var health = 25
@@ -20,8 +20,16 @@ func _ready():
 	sprite_attack.visible = false
 	attack_area.monitoring = false
 	hit_enemies.clear()
+	emit_signal("health_changed", health, max_health)
 	# ✅ Connect signal here
 	#attack_area.body_entered.connect(_on_attack_area_body_entered)
+	
+func get_health_data():
+	return {
+		"current": health,
+		"max": max_health
+	}
+
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
@@ -95,6 +103,7 @@ func _on_attack_area_body_entered(body: Node) -> void:
 func take_damage(amount: int):
 	health -= amount
 	print("Player took damage! Health: ", health)
+	emit_signal("health_changed", health, max_health)
 	if health <= 0:
 		die()
 
@@ -107,12 +116,16 @@ func die():
 	sprite_attack.visible = false
 	sprite.visible = true
 	set_physics_process(false)
-	call_deferred("_delayed_restart")
+	_delayed_restart()
 
 func _delayed_restart():
 	await get_tree().create_timer(respawn_time).timeout
-	if get_tree():
-		get_tree().reload_current_scene()
+	sprite_attack.stop()
+	sprite.stop()
+
+	var root = get_tree().get_first_node_in_group("game_root")
+	if root:
+		root.reload_current_level()
 
 func restart_level():
 	get_tree().reload_current_scene()
@@ -123,3 +136,27 @@ var fall_timer_started = false
 func heal_full():
 	health = max_health
 	print("Player healed to full!")
+	emit_signal("health_changed", health, max_health)
+func reset_player():
+	# hide first → prevents dead frame render
+	visible = false
+
+	is_dead = false
+	is_attacking = false
+	attack_area.monitoring = false
+	set_physics_process(true)
+
+	# hard reset animations
+	sprite.stop()
+	sprite_attack.stop()
+
+	sprite.visible = true
+	sprite_attack.visible = false
+	sprite.play("idle")
+
+	# reset health
+	health = max_health
+	emit_signal("health_changed", health, max_health)
+
+	# show AFTER everything is clean
+	visible = true

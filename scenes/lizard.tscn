@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bxcbeei3v24j7" path="res://assets/animations for characters/lizard/Walk4.png" id="19_e2pvk"]
 [ext_resource type="Texture2D" uid="uid://cl1c3c1vj2do4" path="res://assets/animations for characters/lizard/Walk5.png" id="20_5qf6f"]
 [ext_resource type="Texture2D" uid="uid://b7saeagljhqq7" path="res://assets/animations for characters/lizard/Walk6.png" id="21_t1f8p"]
-[ext_resource type="Script" uid="uid://buhj5dxn4lldt" path="res://scenes/detection_area.gd" id="22_4uh4w"]
+[ext_resource type="Script" uid="uid://bq2bm2qpjwbwj" path="res://scenes/detection_area.gd" id="22_4uh4w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6mbpk"]
 animations = [{
@@ -109,9 +109,9 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4uh4w"]
 height = 48.0
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_h3ti1"]
-a = Vector2(33, 0)
-b = Vector2(-22, 0)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p0oop"]
+a = Vector2(-23, 2)
+b = Vector2(37, 0)
 
 [node name="lizard" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_f52iw")
@@ -132,17 +132,16 @@ position = Vector2(8, 0)
 rotation = 4.71239
 shape = SubResource("CapsuleShape2D_4uh4w")
 
-[node name="DetectionArea" type="Area2D" parent="."]
-collision_layer = 2
-script = ExtResource("22_4uh4w")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(0, -1)
-shape = SubResource("SegmentShape2D_h3ti1")
-
 [node name="AttackTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="DetectionArea" type="Area2D" parent="."]
+script = ExtResource("22_4uh4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, -2)
+shape = SubResource("SegmentShape2D_p0oop")
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
-[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

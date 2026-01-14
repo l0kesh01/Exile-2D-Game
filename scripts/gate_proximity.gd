@@ -26,11 +26,11 @@ func _process(delta):
 		moving_part.position = moving_part.position.move_toward(closed_pos, speed * delta)
 
 func _on_enter(body):
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		is_open = true
 		gate_collision.disabled = true
 
 func _on_exit(body):
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		is_open = false
 		gate_collision.disabled = false

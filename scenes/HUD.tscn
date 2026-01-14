@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://b76u2satptk8d"]
+
+[ext_resource type="Script" uid="uid://w4yhcdg0o14" path="res://scripts/HUD.gd" id="1_axbfd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tixq4"]
+bg_color = Color(0.575632, 0, 0.186337, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axbfd"]
+bg_color = Color(0, 0.465151, 0.121822, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvlm"]
+bg_color = Color(1.98539e-07, 0.27725, 0.0182304, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3kqx"]
+bg_color = Color(0.495295, 0, 0.116616, 1)
+
+[node name="HUD" type="CanvasLayer" groups=["hud"]]
+script = ExtResource("1_axbfd")
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="." groups=["hud"]]
+custom_minimum_size = Vector2(200, 20)
+offset_right = 200.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_tixq4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_axbfd")
+value = 25.0
+show_percentage = false
+
+[node name="HealthText" type="Label" parent="PlayerHealthBar"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "60/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BossHealthBar" type="ProgressBar" parent="." groups=["hud"]]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -230.0
+offset_bottom = 29.0
+grow_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_1bvlm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y3kqx")
+show_percentage = false

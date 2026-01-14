@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dxdv1a3sdyupc" path="res://assets/animations for characters/Minotaur_2/Idle.png" id="5_rvm00"]
 [ext_resource type="Texture2D" uid="uid://33mscx1psobo" path="res://assets/animations for characters/Minotaur_2/Walk.png" id="6_gxrqf"]
 [ext_resource type="Script" uid="uid://c567fs0h0rrnr" path="res://scripts/Minotaur.gd" id="7_800qi"]
-[ext_resource type="Script" uid="uid://buhj5dxn4lldt" path="res://scenes/detection_area.gd" id="7_vs060"]
+[ext_resource type="Script" uid="uid://bq2bm2qpjwbwj" path="res://scenes/detection_area.gd" id="7_an5vr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxbqk"]
 atlas = ExtResource("2_800qi")
@@ -286,8 +286,8 @@ radius = 17.0
 height = 48.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_h3ti1"]
-a = Vector2(33, 0)
-b = Vector2(-22, 0)
+a = Vector2(42, 0)
+b = Vector2(-43, 0)
 
 [node name="minotaur" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("7_800qi")
@@ -308,7 +308,7 @@ shape = SubResource("CapsuleShape2D_4uh4w")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 2
-script = ExtResource("7_vs060")
+script = ExtResource("7_an5vr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(0, -1)

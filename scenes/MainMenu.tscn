@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwfmus6x3pvv2"]
+
+[ext_resource type="Script" uid="uid://c68qefwpvc21v" path="res://scripts/MainMenu.gd" id="1_yqorp"]
+[ext_resource type="PackedScene" uid="uid://dygonb3igg7sg" path="res://scenes/InfoPanel.tscn" id="2_0ykhv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ykhv"]
+font_size = 45
+font_color = Color(1, 0.48, 0.48, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 9.0
+offset_right = 1162.0
+offset_bottom = 658.0
+script = ExtResource("1_yqorp")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "EXILE
+Journey to the hell"
+label_settings = SubResource("LabelSettings_0ykhv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="StoryButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "About/Story"
+
+[node name="HelpButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Help"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="InfoPanel" parent="." instance=ExtResource("2_0ykhv")]
+layout_mode = 1
